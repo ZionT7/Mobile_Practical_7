@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.2.0"
-    timestamp="1543883433827"
+    timestamp="1543884311677"
     token="7051913227571559245"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -66,8 +66,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1543883387328"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1543884255761"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\taruc\Downloads\HelloSharedPrefs\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
@@ -75,7 +75,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1543883433827"
+        timestamp="1543884311677"
         verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

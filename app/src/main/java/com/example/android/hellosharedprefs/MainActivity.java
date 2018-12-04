@@ -54,28 +54,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize views, color
-        mShowCountTextView = findViewById(R.id.count_textview);
-        mColor = ContextCompat.getColor(this,
-                R.color.default_background);
+        // Initialize views, color, preferences
+        mShowCountTextView = (TextView) findViewById(R.id.count_textview);
+        mColor = ContextCompat.getColor(this, R.color.default_background);
+        mPreferences = getSharedPreferences(
+                sharedPrefFile, MODE_PRIVATE);
 
-        mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
+        // Restore preferences
+        mCount = mPreferences.getInt(COUNT_KEY, 0);
+        mShowCountTextView.setText(String.format("%s", mCount));
+        mColor = mPreferences.getInt(COLOR_KEY, mColor);
+        mShowCountTextView.setBackgroundColor(mColor);
 
-        // Restore the saved instance state.
-        if (savedInstanceState != null) {
-
-            mCount = mPreferences.getInt(COUNT_KEY, 0);
-            mShowCountTextView.setText(String.format("%s", mCount));
-            mColor = mPreferences.getInt(COLOR_KEY, mColor);
-            mShowCountTextView.setBackgroundColor(mColor);
-            //mCount = savedInstanceState.getInt(COUNT_KEY);
-           // if (mCount != 0) {
-           //     mShowCountTextView.setText(String.format("%s", mCount));
-           // }
-
-           // mColor = savedInstanceState.getInt(COLOR_KEY);
-           // mShowCountTextView.setBackgroundColor(mColor);
-        }
     }
 
     @Override
